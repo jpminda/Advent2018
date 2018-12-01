@@ -15,9 +15,9 @@ while match == False:
 	for i in range(size):
 		freq = freq + data[i]
 		freqList.append(freq)
-		for j in range(i):
-			if freqList[i] == freqList[j+1]:
-				firstRepeat = freqList[j+1]
+		for j in range(i-1):
+			if freqList[i] == freqList[j]:
+				firstRepeat = freqList[j]
 				match = True
 
 print(freqList)
