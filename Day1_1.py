@@ -12,27 +12,13 @@ freq = 0
 freqList = [freq]
 
 while match == False:
-	for i in range(size):
-		freq = freq + data[i]
-		freqList.append(freq)
-		for j in range(i-1):
-			if freqList[i] == freqList[j]:
-				firstRepeat = freqList[j]
-				match = True
+ 	for i in range(size):
+ 		freq = freq + data[i]
+ 		if freq in freqList:
+ 			match = True
+ 			firstRepeat = freq
+ 		freqList.append(freq)
 
-print(freqList)
+#print(freqList)
 print(match)
-
-print(firstRepeat)
-
-		
-
-		
-
-
-
-		
-
-
-
-
+ 			
