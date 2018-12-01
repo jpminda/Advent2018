@@ -1,19 +1,38 @@
 import numpy as np
 data = np.loadtxt("input.txt")
-freq = 0
-size = len(data)
 
 #challenge 1_1
-for i in size:
-	freq = freq + data[i]
-print(freq)
+finalFreq = sum(data)
+print(finalFreq)
 
 #challenge 1_2
+size = len(data)
+match = False
 freq = 0
-for i in size:
-	freq = freq + data[i]
-	fregList.append(freq)
+freqList = [freq]
 
-	for j in len(freqList):
-		if freqList[j] == freq: 
+while match == False:
+	for i in range(size):
+		freq = freq + data[i]
+		freqList.append(freq)
+		for j in range(i):
+			if freqList[i] == freqList[j+1]:
+				firstRepeat = freqList[j+1]
+				match = True
+
+print(freqList)
+print(match)
+
+print(firstRepeat)
+
+		
+
+		
+
+
+
+		
+
+
+
 
