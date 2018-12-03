@@ -2,8 +2,6 @@
 from collections import Counter
 with open('day2.txt') as f:
     d = f.read().splitlines()
-
-
 size = len(d)
 sum2 = 0
 sum3 = 0
@@ -12,15 +10,13 @@ this = set()
 for i in range(size):
 	this.clear()
 	cs = (Counter(d[i]))
-	#print(cs)
 	for k,v in cs.items():
-		#print(k,v)
 		this.add(v) 
 	print(this)
 	if 2 in this:
 		sum2 = sum2 + 1
 	if 3 in this:
 		sum3 = sum3 + 1
-
 cs = sum2 * sum3
-print(cs)
+
+print(cs) #final answer

@@ -1,22 +1,32 @@
-from collections import Counter
 with open('day2.txt') as f:
     d = f.read().splitlines()
 
-
 size = len(d)
-match = 0
-
-#loop though all the exemplars
-#for each exeamplars i comparare to all the exemaplrs except itself
-#if theere is a mismatch, count how many
-#then if you get a count of 1, record those two values.
-#then remove any non matching letters
-#that is the answer 
+mis_match = 0
 
 for i in range(size):
-	match = 0
-	dd = list(d[i])
-	for j in range(len(dd)):
-		if dd[j] == dd[j]:
-			match = match + 1
-print(match)
+	for j in range(size):
+		mis_match = 0
+		dd = list(d[i])
+		ee = list(d[j])
+		if i != j:
+			#print (i,j)
+			for k in range(len(dd)):
+				if dd[k] != ee[k]:
+					#print(j)
+					mis_match = mis_match + 1
+		if mis_match == 1:
+			final_1 = d[i]
+			final_2 = d[j]
+			for k in range(len(dd)):
+				if final_1[k] != final_2[k]:
+					print(k)
+					remove = k
+					
+print(final_1)
+print(final_2)
+print(final_2[20])
+print(final_1[0:remove] + final_1[remove+1:size]) #this is the final string
+
+
+
