@@ -1,35 +1,18 @@
-import numpy 
+import numpy as np
+import re
+size = 2000
 #import matplotlib.pyplot as plt
-#claims = numpy.loadtxt('day3input.txt')
-
-
-
-
-
-with open('day3inputE.txt') as f:
-	claims=f.read()
-	while '#' in claims:
-		claims=claims.replace('#', '')
-	while ' @ ' in claims:
-		claims=claims.replace(' @ ', '')
-	while ':' in claims:
-		claims=claims.replace(':', '')
-	while ',' in claims:
-		claims=claims.replace(',', '')
-	while 'x' in claims:
-		claims=claims.replace('x', '')
-	while ' ' in claims:
-		claims=claims.replace(' ', '')
-
-
-
-
-#print(claims)
-
-#claims = list(claims)
-#print(claims)
-
-#claims = numpy.array(claims)
+claims = np.zeros(shape=(size,size))
 print(claims)
-
-print(claims[0:12])
+f = open('day3input.txt')
+for line in f:
+	ID,startX,startY,sizeX,sizeY = map(int, re.findall(r'\d+', line))
+	claims[startX:startX + sizeX, startY:startY + sizeY] = claims[startX:startX + sizeX, startY:startY + sizeY]+1
+print(ID)
+print(startX)
+print(startY)
+print(sizeX)
+print(sizeY)
+print(claims)
+final = sum(sum(claims>=2))
+print(final)
