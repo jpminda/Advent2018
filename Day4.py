@@ -21,7 +21,7 @@ for i in range(len(d)):
 		awake = True
 	if "asleep" in function:
 		awake = False
-	stats = {"Gaurd" : gid}
+	stats = {"Guard" : gid}
 
 print(stats)
 
