@@ -2,7 +2,7 @@
 #polymer = str('dabAcCaCBAcCcaDA')
 filename = ('day5input.txt')
 with open(filename, 'r') as f:
-    polymer = f.read()#.splitlines()
+    polymer = f.read()
 
 matches = True
 
