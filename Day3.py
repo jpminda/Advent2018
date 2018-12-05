@@ -26,7 +26,7 @@ for line in f:
 	#that means that a claim was filed only once
 	if (tempclaims[startX:startX + sizeX, startY:startY + sizeY] == claims[startX:startX + sizeX, startY:startY + sizeY]).all():
 		unique = ID #that's the unique ID
-		claims[startX:startX + sizeX, startY:startY + sizeY] = 20 #this will hilight it on the map
+		claims[startX:startX + sizeX, startY:startY + sizeY] = 2000 #this will hilight it on the map
 
 	tempclaims[startX:startX + sizeX, startY:startY + sizeY] = 0
 
